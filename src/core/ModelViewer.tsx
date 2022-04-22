@@ -9,11 +9,11 @@ import {
 } from '@react-three/fiber';
 
 type ModelViewerProps = {
-	models?: (() => JSX.Element)[]
-	Lighting?: () => JSX.Element
-	Camera?: () => JSX.Element
+	models?: JSX.Element[]
+	lighting?: JSX.Element
+	camera?: JSX.Element
 };
-export function ModelViewer({ models, Lighting, Camera } : ModelViewerProps) {
+export function ModelViewer({ models, lighting, camera } : ModelViewerProps) {
 
 	return (
 		<div 
@@ -33,9 +33,9 @@ export function ModelViewer({ models, Lighting, Camera } : ModelViewerProps) {
 
 				<scene >
 
-					{ Lighting ? <Lighting /> : <DefaultLights /> }
-					{ Camera ? <Camera /> : null }
-					{ models && models.map(Model => <Model />) }
+					{ lighting ? lighting : <DefaultLights /> }
+					{ camera ? camera : null }
+					{ models && models }
 					
 				</scene>
 			</Canvas>
