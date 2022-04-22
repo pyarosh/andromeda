@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import React, {
 	Fragment,
+	ReactChild,
 	useEffect,
 	useRef
 } from 'react';
@@ -11,9 +12,10 @@ import {
 type ModelViewerProps = {
 	models?: (() => JSX.Element)[]
 	lighting?: JSX.Element
-	camera?: JSX.Element
+	camera?: JSX.Element,
+	children?: ReactChild
 };
-export function ModelViewer({ models, lighting, camera } : ModelViewerProps) {
+export function ModelViewer({ models, lighting, camera, children } : ModelViewerProps) {
 
 	return (
 		<div 
@@ -36,6 +38,7 @@ export function ModelViewer({ models, lighting, camera } : ModelViewerProps) {
 					{ lighting ? lighting : <DefaultLights /> }
 					{ camera ? camera : null }
 					{ models && models.map(Model => <Model />) }
+					{ children }
 					
 				</scene>
 			</Canvas>
