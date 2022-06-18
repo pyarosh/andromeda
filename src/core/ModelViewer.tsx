@@ -13,9 +13,10 @@ type ModelViewerProps = {
 	models?: (() => JSX.Element)[]
 	lighting?: JSX.Element
 	camera?: JSX.Element,
+	style?: React.CSSProperties,
 	children?: ReactChild
 };
-export function ModelViewer({ models, lighting, camera, children } : ModelViewerProps) {
+export function ModelViewer({ models, lighting, camera, style, children } : ModelViewerProps) {
 
 	return (
 		<div 
@@ -23,7 +24,8 @@ export function ModelViewer({ models, lighting, camera, children } : ModelViewer
 				position: 'absolute',
 				height: '100%',
 				width: '100%',
-				backgroundColor: '#cccccc'
+				backgroundColor: '#cccccc',
+				...style
 			}}
 		>
 
@@ -65,6 +67,7 @@ function DefaultLights(): JSX.Element {
 		<Fragment>
 			<hemisphereLight
 				intensity={0.5}
+				key='0hsL0'
 			/>
 			<spotLight
 				position={[ 1, 3, 1 ]}
@@ -73,6 +76,7 @@ function DefaultLights(): JSX.Element {
 				decay={2}
 				penumbra={1}
 				ref={spotLightRef1}
+				key='1sL0'
 			/>
 			<spotLight
 				position={[ -1.2, 3, 0 ]}
@@ -80,6 +84,7 @@ function DefaultLights(): JSX.Element {
 				castShadow={true}
 				decay={2}
 				penumbra={1}
+				key='2sL1'
 			/>
 			<spotLight
 				position={[0.6, 3.0, -1.4]}
@@ -87,6 +92,7 @@ function DefaultLights(): JSX.Element {
 				castShadow={true}
 				decay={2}
 				penumbra={1}
+				key='3sL2'
 			/>
 		</Fragment>
 	);
