@@ -1,6 +1,6 @@
 {
   "name": "andromeda",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/pyarosh/andromeda#readme",
   "dependencies": {
-    "@react-three/drei": "^9.37.1",
-    "@react-three/fiber": "^8.8.10",
-    "react": "^18.2.0",
-    "three": "^0.145.0"
+    "@react-three/drei": "~9.46.2",
+    "@react-three/fiber": "~8.9.1",
+    "react": "~18.2.0",
+    "three": "~0.147.0"
   },
   "devDependencies": {
-    "@types/three": "^0.144.0",
+    "@types/three": "^0.146.0",
     "typescript": "^4.6.3"
   }
 }
