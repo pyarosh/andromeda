@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import React, {
+	type ReactNode,
 	Fragment,
-	ReactChild,
 	useEffect,
 	useRef
 } from 'react';
@@ -14,7 +14,7 @@ type ModelViewerProps = {
 	lighting?: JSX.Element
 	camera?: JSX.Element,
 	style?: React.CSSProperties,
-	children?: ReactChild
+	children?: ReactNode 
 };
 export function ModelViewer({ models, lighting, camera, style, children } : ModelViewerProps) {
 
